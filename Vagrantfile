@@ -50,8 +50,6 @@ USERCTL=no
 CMD
 echo "alias bond0 bonding" > /etc/modprobe.d/bonding.conf
 systemctl restart network.service
-route 
-ifdown eth1
 
 # Settings cache only dns bind
 yum install bind bind-utils -y
