@@ -65,6 +65,6 @@ systemctl enable named
 yum install bind-chroot -y
 systemctl restart named
 ln -s /etc/named.conf /var/named/chroot/etc/named.conf
-echo 127.0.0.1 > /etc/resolv.conf
+echo nameserver 127.0.0.1 > /etc/resolv.conf
 		  SHELL
 end
