@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
 
   config.vm.provider "virtualbox" do |v|
-	v.gui = true
+	v.gui = false
    v.customize ["modifyvm", :id, "--nic2", "bridged", "--bridgeadapter2", "enp7s0"]
    v.customize ["modifyvm", :id, "--nic3", "bridged", "--bridgeadapter3", "enp7s0"]
   end
@@ -22,8 +22,8 @@ cat > /etc/sysconfig/network-scripts/ifcfg-bond0 << CMD
 DEVICE=bond0
 IPADDR=192.168.33.155
 NETMASK=255.255.255.0
-GATEWAY=192.168.33.1
-DNS1=192.168.33.1
+#GATEWAY=192.168.33.1
+#DNS1=192.168.33.1
 TYPE=Bond
 ONBOOT=yes
 BOOTPROTO=none
